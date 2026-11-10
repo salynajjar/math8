@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>رياضيات الصف الثامن – تدرّب وحلّ</title>
+<meta name="description" content="أسئلة تفاعلية من كتاب الرياضيات للصف الثامن – الفصل الأول: الوحدة الثانية (الجبر) ومراجعة الوحدة الأولى.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f3ef; --card:#fff; --ink:#1f2328; --mute:#667085; --line:#e6e1da;
+  --u2:#9b2f45; --u2s:#f6e6e8; --u1:#1561a5; --u1s:#e3eff9; --r:#3f7d3a; --rs:#e5f1e2;
+  --ok:#1f8a4c; --oks:#e3f5ea; --warn:#b76e00; --warns:#fff3dc; --bad:#c0392b; --bads:#fde8e6;
+  --acc:var(--u2); --accs:var(--u2s);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:'Tajawal',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-tap-highlight-color:transparent}
+button{font-family:inherit;font-size:inherit;cursor:pointer}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px 40px}
+header.top{background:var(--acc);color:#fff;padding:14px 16px;position:sticky;top:0;z-index:5;box-shadow:0 2px 8px #0002}
+header.top .in{max-width:640px;margin:0 auto;display:flex;align-items:center;gap:10px}
+header.top h1{font-size:18px;margin:0;font-weight:800;flex:1}
+header.top button{background:#ffffff26;color:#fff;border:0;border-radius:10px;padding:6px 12px;font-size:15px}
+.hero{padding:22px 0 8px}
+.hero h2{margin:0 0 6px;font-size:24px;font-weight:800}
+.hero p{margin:0;color:var(--mute)}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}
+.how div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 8px;text-align:center;font-size:14px;color:var(--mute)}
+.how b{display:block;font-size:22px;color:var(--ink)}
+.unit{background:var(--card);border-radius:18px;border:1px solid var(--line);margin:14px 0;overflow:hidden}
+.unit .hd{padding:14px 16px;color:#fff;display:flex;align-items:center;gap:10px}
+.unit .hd .n{background:#fff3;border-radius:50%;width:38px;height:38px;display:grid;place-items:center;font-weight:800;font-size:20px;flex:none}
+.unit .hd h3{margin:0;font-size:19px}
+.unit .hd small{display:block;opacity:.9;font-size:13px}
+.unit .tag{margin-inline-start:auto;background:#fff;color:var(--u2);font-weight:700;font-size:12px;border-radius:20px;padding:2px 10px}
+.unit .bd{padding:12px}
+.row{display:flex;align-items:center;gap:10px;width:100%;text-align:start;background:#fafafa;border:1px solid var(--line);border-radius:12px;padding:11px 12px;margin:6px 0;color:var(--ink)}
+.row:active{transform:scale(.99)}
+.row .t{flex:1}
+.row .t small{display:block;color:var(--mute);font-size:13px}
+.row .num{font-weight:800;color:var(--mute);min-width:34px}
+.badge{font-size:13px;font-weight:700;border-radius:20px;padding:2px 9px;background:#eee;color:var(--mute);white-space:nowrap}
+.badge.g{background:var(--oks);color:var(--ok)} .badge.y{background:var(--warns);color:var(--warn)} .badge.r{background:var(--bads);color:var(--bad)}
+.row.main{background:var(--accs);border-color:transparent;font-weight:700}
+.linkbtn{display:block;width:100%;background:var(--card);border:1px dashed #c9c2b8;border-radius:14px;padding:12px;color:var(--ink);font-weight:700;margin-top:10px}
+/* quiz */
+.prog{height:8px;background:#e9e4dd;border-radius:8px;overflow:hidden;margin:14px 0 6px}
+.prog i{display:block;height:100%;background:var(--acc);transition:width .3s}
+.meta{display:flex;justify-content:space-between;font-size:14px;color:var(--mute);gap:8px;flex-wrap:wrap}
+.qcard{background:var(--card);border-radius:18px;border:1px solid var(--line);padding:16px;margin-top:10px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.chip{font-size:12.5px;border-radius:20px;padding:2px 10px;background:var(--accs);color:var(--acc);font-weight:700}
+.chip.src{background:#f1efe9;color:#6b5e4a}
+.qt{font-size:18px;font-weight:700;margin:0 0 10px}
+.mathbox{background:#faf8f5;border:1px solid var(--line);border-radius:14px;padding:14px 10px;text-align:center;font-size:24px;margin:8px 0 14px;overflow-x:auto;white-space:nowrap;line-height:2}
+.cmpbox{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 14px}
+.cmpbox div{background:#faf8f5;border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center}
+.cmpbox small{display:block;color:var(--mute);font-size:13px}
+.cmpbox span.v{font-size:24px}
+.ansin{width:100%;font-family:inherit;font-size:24px;padding:12px 14px;border:2px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);text-align:right;direction:rtl;outline:none}
+.ansin:focus{border-color:var(--acc)}
+.ansin.okb{border-color:var(--ok);background:var(--oks)} .ansin.badb{border-color:var(--bad);background:var(--bads)}
+.tip{font-size:13px;color:var(--mute);margin:6px 2px 0}
+.pad{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:10px}
+.pad button{height:46px;border-radius:11px;border:1px solid var(--line);background:#fff;font-size:21px;color:var(--ink);box-shadow:0 1px 0 #0000000d}
+.pad button:active{background:var(--accs)}
+.pad .v{background:var(--accs);color:var(--acc);font-weight:800}
+.pad .op{background:#f3f1ed}
+.pad .del{background:#fbe9e7;color:var(--bad)}
+.pad .wide{grid-column:span 2;font-size:16px}
+.opts{display:grid;gap:8px}
+.opt{text-align:start;background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 14px;font-size:19px;color:var(--ink);line-height:1.9}
+.opt.sel{border-color:var(--acc);background:var(--accs)}
+.opt.no{opacity:.45;text-decoration:line-through;border-color:var(--bad)}
+.opt.yes{border-color:var(--ok);background:var(--oks)}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:14px;font-size:18px;font-weight:800;margin-top:14px;background:var(--acc);color:#fff}
+.btn.sec{background:#ebe6df;color:var(--ink)}
+.btn:disabled{opacity:.5}
+.fb{border-radius:14px;padding:12px 14px;margin-top:12px;font-size:16px}
+.fb.ok{background:var(--oks);color:#14532d} .fb.warn{background:var(--warns);color:#6b4100} .fb.bad{background:var(--bads);color:#7f1d1d} .fb.info{background:#eef2f6;color:#334155}
+.fb b.h{display:block;font-size:17px;margin-bottom:4px}
+.fb .m{font-size:21px;direction:rtl;display:inline-block;line-height:2}
+details.sol{margin-top:8px} details.sol summary{cursor:pointer;font-weight:700}
+/* math rendering */
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.8em;line-height:1.25;margin:0 2px}
+.fr>span{padding:0 3px}
+.fr>.nu{border-bottom:1.6px solid currentColor}
+.rt{display:inline-flex;align-items:flex-start;direction:rtl;vertical-align:middle;line-height:1.3}
+.rt .sg{display:inline-block;transform:scaleX(-1)}
+.rt .rd{border-top:1.6px solid currentColor;padding:0 2px;margin-top:.12em}
+.rt .ix{font-size:.55em;margin-left:-.3em;margin-top:-.15em}
+.ov{text-decoration:overline}
+/* results */
+.score{text-align:center;padding:22px 10px;background:var(--card);border-radius:18px;border:1px solid var(--line);margin-top:16px}
+.ring{width:150px;height:150px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center}
+.ring div{width:118px;height:118px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:34px;font-weight:800}
+.score h2{margin:4px 0;font-size:24px}
+.score p{margin:0;color:var(--mute)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.stats div{background:#faf8f5;border-radius:12px;padding:8px;font-size:13px;color:var(--mute)}
+.stats b{display:block;font-size:22px;color:var(--ink)}
+h3.sec{margin:22px 0 8px;font-size:18px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin:8px 0;font-size:15px}
+.rev .top{display:flex;gap:8px;align-items:center;margin-bottom:4px}
+.rev .ic{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;flex:none;font-size:15px}
+.rev .q{font-size:18px;line-height:2}
+.rev .a{color:var(--mute)}
+.rev .a .m{color:var(--ink);font-size:19px}
+.weak{background:var(--warns);border-radius:14px;padding:10px 14px;margin:6px 0}
+.ref h4{margin:18px 0 6px;color:var(--acc)}
+.ref .rule{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:6px 0;line-height:2.1}
+.ref .rule small{color:var(--mute);display:block;line-height:1.4}
+.filter{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.filter button{border:1px solid var(--line);background:#fff;border-radius:20px;padding:4px 12px;font-size:14px}
+.filter button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+footer{text-align:center;color:var(--mute);font-size:13px;margin:30px 0 10px}
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><h1 id="ttl">رياضيات الصف الثامن</h1><button id="hbtn" hidden>الرئيسية</button></div></header>
+<main class="wrap" id="app"></main>
+<script src="data.js"></script>
+<script>
+/* ========== أدوات العرض ========== */
+const AD = '٠١٢٣٤٥٦٧٨٩';
+const toAr = s => String(s).replace(/\d/g, d => AD[d]);
+function R(s) {
+  s = String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  s = s.replace(/(\d)\.(?=\d)/g, '$1٫');
+  s = toAr(s).replace(/-/g, '−').replace(/\*/g, '×');
+  s = s.replace(/\[([^\[\]\/]+)\/([^\[\]]+)\]/g, '<span class="fr"><span class="nu">$1</span><span class="de">$2</span></span>');
+  const rad = (ix, body) => `<span class="rt">${ix ? '<span class="ix">٣</span>' : ''}<span class="sg">√</span><span class="rd">${body}</span></span>`;
+  s = s.replace(/∛\{([^{}]*)\}/g, (_, b) => rad(1, b)).replace(/√\{([^{}]*)\}/g, (_, b) => rad(0, b));
+  s = s.replace(/∛([٠-٩٫]+)/g, (_, b) => rad(1, b)).replace(/√([٠-٩٫]+)/g, (_, b) => rad(0, b));
+  s = s.replace(/‾\{([^{}]*)\}/g, '<span class="ov">$1</span>');
+  return s;
+}
+
+/* ========== قراءة الإجابة وتقييمها ========== */
+function norm(s) {
+  return String(s)
+    .replace(/[٠-٩]/g, d => AD.indexOf(d)).replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d))
+    .replace(/[٫,،]/g, '.').replace(/[−–—]/g, '-').replace(/[×·*]/g, '*').replace(/÷/g, '/')
+    .replace(/²/g, '^2').replace(/³/g, '^3').replace(/[\[{]/g, '(').replace(/[\]}]/g, ')')
+    .replace(/[إاآ]/g, 'أ').replace(/ـ/g, '').replace(/\s+/g, '')
+    .replace(/sqrt/gi, '√').replace(/[xX]/g, 'س').replace(/[yY]/g, 'ص').replace(/[aA]/g, 'أ').replace(/[bB]/g, 'ب')
+    .replace(/m/g, 'م').replace(/l/g, 'ل').replace(/f/g, 'ف');
+}
+function parse(src) {
+  const s = norm(src); let i = 0;
+  const peek = () => s[i];
+  const isVar = c => c && /[ء-ي]/.test(c);
+  const startsPrim = c => c && (/[\d.(√∛π]/.test(c) || isVar(c));
+  function expr() { let n = term(); while (peek() === '+' || peek() === '-') { const o = s[i++]; const r = term(); const l = n; n = o === '+' ? e => l(e) + r(e) : e => l(e) - r(e); } return n; }
+  function term() { let n = unary(); for (;;) { const c = peek(); if (c === '*' || c === '/') { i++; const r = unary(), l = n; n = c === '*' ? e => l(e) * r(e) : e => l(e) / r(e); } else if (startsPrim(c)) { const r = power(), l = n; n = e => l(e) * r(e); } else break; } return n; }
+  function unary() { if (peek() === '-') { i++; const r = unary(); return e => -r(e); } if (peek() === '+') { i++; return unary(); } return power(); }
+  function power() { const b = prim(); if (peek() === '^') { i++; const x = unary(); return e => Math.pow(b(e), x(e)); } return b; }
+  function prim() {
+    const c = peek();
+    if (c === undefined) throw 0;
+    if (/[\d.]/.test(c)) { let j = i; while (/[\d.]/.test(s[j] || '')) j++; const t = s.slice(i, j); i = j; if ((t.match(/\./g) || []).length > 1 || t === '.') throw 0; const v = parseFloat(t); return () => v; }
+    if (c === '(') { i++; const n = expr(); if (s[i] !== ')') throw 0; i++; return n; }
+    if (c === '√') { i++; const n = power(); return e => Math.sqrt(n(e)); }
+    if (c === '∛') { i++; const n = power(); return e => Math.cbrt(n(e)); }
+    if (c === 'π') { i++; return () => Math.PI; }
+    if (isVar(c)) { i++; return e => e[c] ?? (e[c] = 1.37 + Math.random() * 1.9); }
+    throw 0;
+  }
+  const f = expr(); if (i < s.length) throw 0; return f;
+}
+function vars(s) { return [...new Set((norm(s).match(/[ء-ي]/g) || []))]; }
+function same(a, b) {
+  const fa = parse(a), fb = parse(b);
+  for (let k = 0; k < 5; k++) {
+    const env = {}; vars(a + b).forEach(v => env[v] = 1.13 + Math.random() * 2.3);
+    const x = fa(env), y = fb(env);
+    if (!isFinite(x) || Math.abs(x - y) > 1e-7 * Math.max(1, Math.abs(y))) return false;
+  }
+  return true;
+}
+function nterms(n) { let d = 0, c = 1; for (let k = 0; k < n.length; k++) { const ch = n[k]; if (ch === '(') d++; else if (ch === ')') d--; else if ((ch === '+' || ch === '-') && d === 0 && k > 0 && !/[+\-*\/^(]/.test(n[k - 1])) c++; } return c; }
+const gcd = (a, b) => b ? gcd(b, a % b) : a;
+function hasPow(n, p) { for (let k = 2; Math.pow(k, p) <= n; k++) if (n % Math.pow(k, p) === 0) return true; return false; }
+function simpIssue(raw, exp) {
+  const fx = t => norm(t).replace(/\((\d+)\/(\d+)\)/g, '$1/$2');
+  const n = fx(raw); exp = fx(exp);
+  if (/[()]/.test(n)) return 'القيمة صحيحة 👍 لكن افتح الأقواس واكتب الناتج بأبسط صورة.';
+  if (/\*/.test(n)) return 'القيمة صحيحة 👍 لكن أكمل عملية الضرب واكتب الناتج بأبسط صورة.';
+  for (const m of n.matchAll(/(?<![\d.])(\d+)\/(\d+)(?![\d.])/g)) if (gcd(+m[1], +m[2]) > 1) return 'القيمة صحيحة 👍 لكن اختصر الكسر إلى أبسط صورة.';
+  for (const m of n.matchAll(/√(\d+)(?![\d.])/g)) if (hasPow(+m[1], 2)) return 'القيمة صحيحة 👍 لكن بسّط الجذر (أخرج المربع الكامل من تحته).';
+  for (const m of n.matchAll(/∛(\d+)(?![\d.])/g)) if (hasPow(+m[1], 3)) return 'القيمة صحيحة 👍 لكن بسّط الجذر التكعيبي.';
+  if (/[√∛]\d*\./.test(n)) return 'القيمة صحيحة 👍 لكن احسب قيمة الجذر.';
+  if (nterms(n) > nterms(exp)) return 'القيمة صحيحة 👍 لكن اجمع الحدود المتشابهة واكتب الناتج بأبسط صورة.';
+  return null;
+}
+function nearRational(v) { for (let q = 1; q <= 400; q++) if (Math.abs(v * q - Math.round(v * q)) < 1e-8) return true; return false; }
+// returns {ok} | {wrong} | {note}
+function check(q, raw) {
+  if (!String(raw).trim()) return { note: 'اكتب إجابتك أولًا.' };
+  let f; try { f = parse(raw); } catch (e) { return { note: 'لم أستطع قراءة الإجابة، تأكد من كتابتها (مثل: ٣/٤ أو ٢√٥ أو ٣س² + ٢س).' }; }
+  if (q.t === 'rng') {
+    let v; try { v = f({}); } catch (e) { return { note: 'اكتب عددًا.' }; }
+    if (vars(raw).length || !isFinite(v)) return { note: 'اكتب عددًا فقط.' };
+    if (q.num && /[√∛π]/.test(norm(raw))) return { note: 'أعطِ قيمة تقريبية بعدد عشري (بدون رمز الجذر).' };
+    if (!(v > q.min + 1e-12 && v < q.max - 1e-12)) return { wrong: 1 };
+    if (q.irr && (!/[√∛π]/.test(norm(raw)) || nearRational(v))) return { wrong: 1, msg: 'العدد يقع بين العددين لكنه ليس غير نسبي.' };
+    return { ok: 1 };
+  }
+  let eq; try { eq = same(raw, q.a); } catch (e) { eq = false; }
+  if (!eq) return { wrong: 1 };
+  if (!q.free) { const iss = simpIssue(raw, q.a); if (iss) return { note: iss }; }
+  return { ok: 1 };
+}
+
+/* ========== الحالة والتخزين ========== */
+const store = { get() { try { return JSON.parse(localStorage.getItem('m8res') || '{}'); } catch (e) { return {}; } },
+  set(k, v) { try { const o = store.get(); o[k] = v; localStorage.setItem('m8res', JSON.stringify(o)); } catch (e) {} } };
+QUESTIONS.forEach((q, i) => q.id = i);
+const app = document.getElementById('app');
+const hbtn = document.getElementById('hbtn');
+hbtn.onclick = () => { if (!quiz || quiz.done || confirm('هل تريد الخروج من الاختبار؟ سيضيع تقدّمك.')) home(); };
+let quiz = null;
+const theme = u => { const r = document.documentElement.style; const m = { 1: ['--u1', '--u1s'], 2: ['--u2', '--u2s'], 3: ['--r', '--rs'] }[u]; r.setProperty('--acc', `var(${m[0]})`); r.setProperty('--accs', `var(${m[1]})`); };
+const unitOf = q => q.l === 'R' ? 3 : LESSONS[q.l].u;
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const byL = l => QUESTIONS.filter(q => q.l === l);
+const byU = u => QUESTIONS.filter(q => q.l !== 'R' && LESSONS[q.l].u === u);
+
+const QUIZZES = {
+  'L2-1': () => ({ name: 'الدرس ٢-١: ' + LESSONS['2-1'].t, u: 2, qs: byL('2-1') }),
+  'L2-2': () => ({ name: 'الدرس ٢-٢: ' + LESSONS['2-2'].t, u: 2, qs: byL('2-2') }),
+  'U2': () => ({ name: 'الوحدة الثانية (حتى ضرب المقادير)', u: 2, qs: byU(2) }),
+  'U1': () => ({ name: 'مراجعة الوحدة الأولى – كل الأسئلة', u: 1, qs: byU(1) }),
+  'U1Q': () => ({ name: 'مراجعة سريعة للوحدة الأولى', u: 1, qs: shuffle(byU(1)).slice(0, 15) }),
+  'R': () => ({ name: 'مراجعة شاملة للوحدتين', u: 3, qs: byL('R') }),
+  'RQ': () => ({ name: 'اختبار عشوائي من الوحدتين', u: 3, qs: shuffle([...shuffle(byU(1)).slice(0, 10), ...shuffle(byU(2)).slice(0, 10)]) }),
+};
+['1-1', '1-2', '1-3', '1-4', '1-5', '1-6', '1-7', '1-8'].forEach(l => QUIZZES['L' + l] = () => ({ name: 'الدرس ' + toAr(l) + ': ' + LESSONS[l].t, u: 1, qs: byL(l) }));
+
+function badge(k) { const r = store.get()[k]; if (!r) return ''; const c = r.best >= 80 ? 'g' : r.best >= 50 ? 'y' : 'r'; return `<span class="badge ${c}">أفضل نتيجة ${toAr(r.best)}٪</span>`; }
+function row(k, title, sub, main) { const n = QUIZZES[k]().qs.length; return `<button class="row ${main ? 'main' : ''}" data-q="${k}"><span class="t">${title}${sub ? `<small>${sub}</small>` : ''}</span>${badge(k)}<span class="num">${toAr(n)}</span></button>`; }
+
+/* ========== الصفحة الرئيسية ========== */
+function home() {
+  quiz = null; theme(2); hbtn.hidden = true; document.getElementById('ttl').textContent = 'رياضيات الصف الثامن';
+  const u1 = ['1-1', '1-2', '1-3', '1-4', '1-5', '1-6', '1-7', '1-8'].map(l => row('L' + l, toAr(l) + ' ' + LESSONS[l].t, 'صفحات ' + toAr(LESSONS[l].p))).join('');
+  app.innerHTML = `
+  <section class="hero"><h2>تدرّب وحلّ أسئلة كتابك ✏️</h2>
+  <p>أسئلة من كتاب الرياضيات للصف الثامن – الفصل الأول. اكتب إجابتك وتحقق منها فورًا.</p></section>
+  <div class="how"><div><b>١</b>محاولة أولى</div><div><b>٢</b>محاولة ثانية مع تلميح</div><div><b>✓</b>ثم الحل والتقييم</div></div>
+
+  <div class="unit"><div class="hd" style="background:var(--u2)"><span class="n">٢</span><div><h3>الوحدة الثانية: الجبر</h3><small>حتى ضرب المقادير الجبرية · ص ٣٩–٤٦</small></div><span class="tag">ابدأ هنا</span></div>
+  <div class="bd">
+    ${row('L2-1', '٢-١ جمع المقادير الجبرية وطرحها', 'صفحات ٣٩–٤١')}
+    ${row('L2-2', '٢-٢ ضرب المقادير الجبرية', 'صفحات ٤٢–٤٦')}
+    ${row('U2', 'الوحدة الثانية كاملة', 'الدرسان معًا', 1)}
+  </div></div>
+
+  <div class="unit"><div class="hd" style="background:var(--u1)"><span class="n">١</span><div><h3>مراجعة الوحدة الأولى</h3><small>الأعداد النسبية وغير النسبية · ص ٤–٣٦</small></div></div>
+  <div class="bd">
+    ${row('U1Q', 'مراجعة سريعة', '١٥ سؤالًا عشوائيًا من كل الدروس', 1)}
+    ${u1}
+    ${row('U1', 'كل أسئلة الوحدة الأولى', 'بالترتيب')}
+  </div></div>
+
+  <div class="unit"><div class="hd" style="background:var(--r)"><span class="n">∑</span><div><h3>مراجعة شاملة: الوحدتان ١ و ٢</h3><small>أسئلة جديدة على نمط الكتاب + اختبار عشوائي</small></div></div>
+  <div class="bd">
+    ${row('R', 'مراجعة شاملة', 'أسئلة جديدة مع مرجع الصفحة المشابهة', 1)}
+    ${row('RQ', 'اختبار عشوائي من الوحدتين', '١٠ من الأولى + ١٠ من الثانية')}
+  </div></div>
+
+  <button class="linkbtn" id="refb">📖 ملخص القواعد ومرجع الصفحات</button>
+  <footer>المرجع: كتاب الرياضيات للصف الثامن – الجزء الأول – الطبعة الرابعة ٢٠٢٢</footer>`;
+  app.querySelectorAll('[data-q]').forEach(b => b.onclick = () => start(b.dataset.q));
+  document.getElementById('refb').onclick = reference;
+  scrollTo(0, 0);
+}
+
+/* ========== الاختبار ========== */
+function start(k) {
+  const d = QUIZZES[k]();
+  quiz = { k, ...d, i: 0, st: d.qs.map(() => ({ tries: 0, res: null, given: '' })) };
+  theme(d.u); hbtn.hidden = false; document.getElementById('ttl').textContent = d.name;
+  show();
+}
+function padHTML(q) {
+  const vs = q.t === 'e' ? vars(q.a) : [];
+  const vrow = vs.length ? `<div class="pad">${vs.map(v => `<button class="v" data-k="${v}">${v}</button>`).join('')}</div>` : '';
+  const keys = [['7'], ['8'], ['9'], ['+', 'op'], ['−', 'op'], ['²', 'op'],
+    ['4'], ['5'], ['6'], ['×', 'op'], ['/', 'op'], ['³', 'op'],
+    ['1'], ['2'], ['3'], ['(', 'op'], [')', 'op'], ['√', 'op'],
+    ['0'], ['٫'], ['∛', 'op']];
+  const ks = keys.map(([k, c]) => { const lab = /\d/.test(k) ? toAr(k) : k; return `<button class="${c || ''}" data-k="${lab}">${lab}</button>`; }).join('')
+    + `<button class="del" style="grid-column:span 3" data-k="⌫">⌫ حذف</button>`;
+  return `${vrow}<div class="pad">${ks}</div>`;
+}
+function show() {
+  const q = quiz.qs[quiz.i], s = quiz.st[quiz.i], n = quiz.qs.length;
+  const L = LESSONS[q.l];
+  const lessonChip = q.l === 'R' ? 'مراجعة شاملة' : `الدرس ${toAr(q.l)}`;
+  let body = `<div class="chips"><span class="chip">${lessonChip}</span><span class="chip src">📖 ${R(q.ref)}</span></div>
+  <p class="qt">${R(q.q)}</p>`;
+  if (q.cmp) body += `<div class="cmpbox"><div><small>العدد الأول</small><span class="v">${R(q.cmp[0])}</span></div><div><small>العدد الثاني</small><span class="v">${R(q.cmp[1])}</span></div></div>`;
+  else if (q.m) body += `<div class="mathbox">${R(q.m)}</div>`;
+  if (q.t === 'mc') {
+    body += `<div class="opts">${q.opts.map((o, j) => `<button class="opt" data-o="${j}">${R(o)}</button>`).join('')}</div>`;
+  } else {
+    body += `<input class="ansin" id="ans" inputmode="none" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="اكتب الإجابة هنا">
+    <div class="tip">الكسر: ٣/٤ · الجذر: ٢√٥ أو √(٤/٩) · <a href="#" id="kb">استخدم لوحة مفاتيح الجهاز</a></div>${padHTML(q)}`;
+  }
+  body += `<div id="fb"></div><button class="btn" id="go">تحقّق</button>`;
+  app.innerHTML = `<div class="prog"><i style="width:${(quiz.i / n) * 100}%"></i></div>
+  <div class="meta"><span>السؤال ${toAr(quiz.i + 1)} من ${toAr(n)}</span><span>${L.t}</span></div>
+  <div class="qcard">${body}</div>`;
+  scrollTo(0, 0);
+  const go = document.getElementById('go');
+  let sel = null;
+  if (q.t === 'mc') {
+    app.querySelectorAll('.opt').forEach(b => b.onclick = () => {
+      if (s.res || b.classList.contains('no')) return;
+      app.querySelectorAll('.opt').forEach(x => x.classList.remove('sel')); b.classList.add('sel'); sel = +b.dataset.o;
+    });
+  } else {
+    const inp = document.getElementById('ans');
+    document.getElementById('kb').onclick = e => { e.preventDefault(); inp.setAttribute('inputmode', 'text'); inp.blur(); inp.focus(); };
+    app.querySelectorAll('.pad button').forEach(b => b.onclick = () => {
+      const k = b.dataset.k, st = inp.selectionStart ?? inp.value.length, en = inp.selectionEnd ?? st;
+      if (k === '⌫') { if (st !== en) inp.setRangeText('', st, en, 'end'); else if (st > 0) inp.setRangeText('', st - 1, st, 'end'); }
+      else inp.setRangeText(k, st, en, 'end');
+      inp.classList.remove('badb');
+    });
+    inp.addEventListener('keydown', e => { if (e.key === 'Enter') go.click(); });
+  }
+  go.onclick = () => {
+    if (s.res) return next();
+    const fb = document.getElementById('fb');
+    let r;
+    if (q.t === 'mc') { if (sel === null) { fb.innerHTML = `<div class="fb info">اختر إجابة أولًا.</div>`; return; } r = sel === q.a ? { ok: 1 } : { wrong: 1 }; s.given = q.opts[sel]; }
+    else { const v = document.getElementById('ans').value; r = check(q, v); s.given = v; }
+    if (r.note) { fb.innerHTML = `<div class="fb info">${r.note}</div>`; return; }
+    s.tries++;
+    const solHTML = `<div class="m">${R(q.sol)}</div>`;
+    const ansHTML = q.t === 'mc' ? R(q.opts[q.a]) : q.t === 'rng' ? 'مثال: ' + R(q.a) : R(q.a);
+    if (r.ok) {
+      s.res = s.tries === 1 ? 'ok1' : 'ok2';
+      fb.innerHTML = `<div class="fb ok"><b class="h">${s.tries === 1 ? 'إجابة صحيحة! أحسنت 🌟' : 'صحيح! أحسنت في المحاولة الثانية 👏'}</b><details class="sol"><summary>طريقة الحل</summary>${solHTML}</details></div>`;
+      mark(true, q);
+    } else if (s.tries === 1) {
+      fb.innerHTML = `<div class="fb warn"><b class="h">${r.msg || 'إجابة غير صحيحة، حاول مرة أخرى 💪'}</b>💡 تلميح: ${R(q.h || L.h)}</div>`;
+      mark(false, q, true);
+      return;
+    } else {
+      s.res = 'fail';
+      fb.innerHTML = `<div class="fb bad"><b class="h">إجابة غير صحيحة. الإجابة الصحيحة:</b><div class="m">${ansHTML}</div><div style="margin-top:6px"><b>الحل:</b> ${solHTML}</div></div>`;
+      mark(false, q);
+    }
+    go.textContent = quiz.i === n - 1 ? 'عرض النتيجة والتقييم' : 'السؤال التالي ←';
+    fb.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+  function mark(ok, q, retry) {
+    if (q.t === 'mc') {
+      const b = app.querySelector(`.opt[data-o="${sel}"]`);
+      if (ok) b.classList.add('yes'); else { b.classList.remove('sel'); b.classList.add('no'); sel = null; if (!retry) app.querySelector(`.opt[data-o="${q.a}"]`).classList.add('yes'); }
+    } else {
+      const inp = document.getElementById('ans'); inp.classList.toggle('okb', ok); inp.classList.toggle('badb', !ok);
+      if (!retry) inp.readOnly = true;
+    }
+  }
+}
+function next() { if (quiz.i < quiz.qs.length - 1) { quiz.i++; show(); } else results(); }
+
+/* ========== النتيجة والتقييم ========== */
+function results() {
+  quiz.done = true;
+  const n = quiz.qs.length; const st = quiz.st;
+  const c1 = st.filter(s => s.res === 'ok1').length, c2 = st.filter(s => s.res === 'ok2').length, f = n - c1 - c2;
+  const pct = Math.round(((c1 * 2 + c2) / (2 * n)) * 100);
+  const prev = store.get()[quiz.k];
+  store.set(quiz.k, { best: Math.max(pct, prev ? prev.best : 0), last: pct });
+  const grade = pct >= 90 ? ['ممتاز 🏆', 'أداء رائع! أنت متمكن من هذه المهارات.'] : pct >= 80 ? ['جيد جدًا ⭐', 'أداء قوي، راجع الأسئلة القليلة التي أخطأت فيها.'] : pct >= 65 ? ['جيد 👍', 'مستوى جيد، راجع القواعد في الصفحات المذكورة بالأسفل.'] : pct >= 50 ? ['مقبول', 'تحتاج إلى مراجعة بعض الدروس، ابدأ بالدروس المقترحة بالأسفل.'] : ['يحتاج إلى مراجعة', 'لا بأس! راجع الدروس في الكتاب ثم أعد المحاولة.'];
+  const col = pct >= 80 ? 'var(--ok)' : pct >= 50 ? 'var(--warn)' : 'var(--bad)';
+  // per lesson
+  const per = {};
+  quiz.qs.forEach((q, i) => { const p = per[q.l] || (per[q.l] = { pts: 0, n: 0 }); p.n++; p.pts += st[i].res === 'ok1' ? 2 : st[i].res === 'ok2' ? 1 : 0; });
+  const weak = Object.entries(per).filter(([l, p]) => p.pts / (2 * p.n) < 0.7);
+  const wrongIdx = st.map((s, i) => s.res === 'ok1' ? -1 : i).filter(i => i >= 0);
+  const ic = r => r === 'ok1' ? ['✓', 'var(--ok)', 'صح من المحاولة الأولى'] : r === 'ok2' ? ['½', 'var(--warn)', 'صح من المحاولة الثانية'] : ['✗', 'var(--bad)', 'لم تُحل – عُرض الحل'];
+  const list = quiz.qs.map((q, i) => {
+    const [g, c, t] = ic(st[i].res);
+    const qtext = q.cmp ? `قارن: ${R(q.cmp[0])} و ${R(q.cmp[1])}` : (q.m ? R(q.m) : R(q.q));
+    const ans = q.t === 'mc' ? R(q.opts[q.a]) : q.t === 'rng' ? 'مثال: ' + R(q.a) : R(q.a);
+    return `<div class="rev" data-r="${st[i].res}"><div class="top"><span class="ic" style="background:${c}">${g}</span><b>سؤال ${toAr(i + 1)}</b><span class="chip src" style="margin-inline-start:auto">📖 ${R(q.ref)}</span></div>
+    <div class="q">${qtext}</div>
+    <div class="a">${t}${st[i].res !== 'ok1' && st[i].given ? ` · إجابتك الأولى/الأخيرة: <span class="m">${R(st[i].given.replace(/[٠-٩]/g, d => AD.indexOf(d)))}</span>` : ''}</div>
+    <div class="a">الإجابة الصحيحة: <span class="m">${ans}</span></div>
+    <details class="sol"><summary>الحل</summary><div class="m">${R(q.sol)}</div></details></div>`;
+  }).join('');
+  app.innerHTML = `<div class="score"><div class="ring" style="background:conic-gradient(${col} ${pct * 3.6}deg,#eee 0)"><div>${toAr(pct)}٪</div></div>
+  <h2>${grade[0]}</h2><p>${grade[1]}</p>
+  <div class="stats"><div><b style="color:var(--ok)">${toAr(c1)}</b>صح من أول مرة</div><div><b style="color:var(--warn)">${toAr(c2)}</b>صح من ثاني مرة</div><div><b style="color:var(--bad)">${toAr(f)}</b>عُرض الحل</div></div>
+  <p style="margin-top:10px;font-size:13px">طريقة الحساب: نقطتان للمحاولة الأولى، ونقطة للثانية.</p></div>
+  ${weak.length ? `<h3 class="sec">📚 دروس أنصحك بمراجعتها في الكتاب</h3>${weak.map(([l, p]) => `<div class="weak"><b>${l === 'R' ? 'مراجعة شاملة' : 'الدرس ' + toAr(l) + ': ' + LESSONS[l].t}</b>${LESSONS[l].p ? ` — صفحات ${toAr(LESSONS[l].p)}` : ''}<br><small>${toAr(Math.round(p.pts / (2 * p.n) * 100))}٪ في هذا الدرس</small></div>`).join('')}` : ''}
+  ${wrongIdx.length ? `<button class="btn" id="redo">أعد حل الأسئلة التي أخطأت فيها (${toAr(wrongIdx.length)})</button>` : ''}
+  <button class="btn sec" id="again">أعد الاختبار كاملًا</button>
+  <button class="btn sec" id="hm">الرئيسية</button>
+  <h3 class="sec">🗂️ مرجع الأسئلة والإجابات</h3>
+  <div class="filter"><button class="on" data-f="all">الكل</button><button data-f="x">الأخطاء فقط</button></div>
+  <div id="lst">${list}</div>`;
+  scrollTo(0, 0);
+  const qs = quiz.qs, k = quiz.k, name = quiz.name, u = quiz.u;
+  if (wrongIdx.length) document.getElementById('redo').onclick = () => {
+    const sub = wrongIdx.map(i => qs[i]);
+    quiz = { k: k + '-redo', name: 'إعادة الأسئلة الخاطئة', u, qs: sub, i: 0, st: sub.map(() => ({ tries: 0, res: null, given: '' })) }; show();
+  };
+  document.getElementById('again').onclick = () => start(k.replace(/-redo$/, ''));
+  document.getElementById('hm').onclick = home;
+  app.querySelectorAll('.filter button').forEach(b => b.onclick = () => {
+    app.querySelectorAll('.filter button').forEach(x => x.classList.toggle('on', x === b));
+    app.querySelectorAll('.rev').forEach(r => r.hidden = b.dataset.f === 'x' && r.dataset.r === 'ok1');
+  });
+}
+
+/* ========== ملخص القواعد ========== */
+function reference() {
+  hbtn.hidden = false; quiz = null; theme(2); document.getElementById('ttl').textContent = 'ملخص القواعد والمرجع';
+  const rules = {
+    '2-1': [['عند جمع مقدارين جبريين أو طرحهما، تُجمع معاملات الحدود المتشابهة أو تُطرح.', 'ص40'], ['الإشارة السالبة قبل القوس تغيّر إشارة كل حد بداخله: -(ب - 3) = -ب + 3', 'ص40']],
+    '2-2': [['توزيع الضرب على الجمع: أ(ب + ج) = أب + أج', 'ص43'], ['(أ + ب)(ج + د) = أ(ج + د) + ب(ج + د)', 'ص43'], ['مربع مجموع حدين: (أ + ب)² = أ² + 2أب + ب²', 'ص45'], ['مربع الفرق: (أ - ب)² = أ² - 2أب + ب²', 'ص45']],
+    '1-1': [['العدد النسبي: أي عدد يمكن كتابته بالصورة [أ/ب] ، أ، ب ∈ ص ، ب ≠ 0', 'ص4'], ['ط ⊂ ص ⊂ ن', 'ص5'], ['أي عدد عشري دوري هو عدد نسبي (مثال: 0.‾{3} = [1/3])', 'ص5']],
+    '1-2': [['√{[أ/ب]} = [√أ/√ب] ، ب ≠ 0', 'ص9'], ['∛{[أ³/ب³]} = [أ/ب]', 'ص10']],
+    '1-3': [['للمقارنة: نوحّد المقامات، أو نحوّل إلى كسور عشرية.', 'ص12–13']],
+    '1-4': [['[أ/ب] + [ج/د] = [أد + ب ج/ب د]', 'ص16'], ['[أ/ب] - [ج/د] = [أد - ب ج/ب د]', 'ص18'], ['الجمع مغلق وتبديلي وتجميعي على ن، والنظير الجمعي لـ [أ/ب] هو [-أ/ب]', 'ص15–17']],
+    '1-5': [['[أ/ب] × [ج/د] = [أ × ج/ب × د]', 'ص20'], ['العدد 1 هو العنصر المحايد للضرب، والنظير الضربي لـ [أ/ب] هو [ب/أ]', 'ص22'], ['[أ/ب] ÷ [ج/د] = [أ/ب] × [د/ج]', 'ص24']],
+    '1-6': [['العدد غير النسبي لا يمكن كتابته بالصورة [أ/ب]', 'ص26'], ['√{أب} = √أ × √ب ، مثال: √{44} = 2√{11}', 'ص27–28'], ['∛{أب} = ∛أ × ∛ب ، مثال: ∛{40} = 2∛{5}', 'ص28'], ['للتقريب: نحصر العدد بين مربعين (أو مكعبين) كاملين.', 'ص29']],
+    '1-7': [['نجمع الجذور المتشابهة: 2√{5} + 3√{5} = 5√{5}', 'ص31'], ['√أ × √ب × √ج = √{أ ب ج}', 'ص33']],
+  };
+  const sec = (u, ls) => `<h4>${u}</h4>` + ls.map(l => `<div class="rule"><b>${toAr(l)} ${LESSONS[l].t}</b> <small>صفحات ${toAr(LESSONS[l].p)}</small>${rules[l].map(([r, p]) => `<div>• ${R(r)} <small style="display:inline">(${toAr(p)})</small></div>`).join('')}</div>`).join('');
+  app.innerHTML = `<div class="ref">${sec('الوحدة الثانية: الجبر', ['2-1', '2-2'])}${sec('الوحدة الأولى: الأعداد النسبية وغير النسبية', ['1-1', '1-2', '1-3', '1-4', '1-5', '1-6', '1-7'])}</div>
+  <button class="btn" id="hm">العودة للرئيسية</button>`;
+  document.getElementById('hm').onclick = home; scrollTo(0, 0);
+}
+home();
+</script>
+</body>
+</html>
